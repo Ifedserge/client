@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CLIENT PART</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class ="header">
+    <ul class= 'navigation'>
+      <li><a  class='navigation_link' href="/home">HOME</a></li>
+      <li><a  class='navigation_link line-through' href="">Author</a></li>
+      <li><a  class='navigation_link line-through' href="">About</a></li>
+</div>
+<div class = 'content'>
+    <div class = 'title' >
+    <h1>New posts:</h1>
+    </div>
+    <div class = 'content_body'>
+     <ul class="content_body_post">
+      <% if (posts) { %>
+      <% posts.forEach(({  name, body, author, updatedAt, tags, _id })=> { %>
+        <a class= 'link' href="/posts/<%= _id %>"> 
+          <li class="content_body_post-li">
+            <h4><%= name %></h4>
+            <p><%= author %></p>
+            <p> <%= tags %></p>
+            <p><%= body %></p>
+            <p><%= updatedAt.toLocaleDateString() %></p>           
+        </li>
+      </a>
+        <% }) %>
+          <% } %>
+  </ul>
+</div>
+</div>
+</body>
+</html>

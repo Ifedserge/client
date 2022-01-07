@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CLIENT PART</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div class ="header">
+      <ul class= 'navigation'>
+      <li><a  class='navigation_link' href="/home">HOME</a></li>
+      <li><a  class='navigation_link line-through' href="">Author</a></li>
+      <li><a  class='navigation_link line-through' href="">About</a></li>
+  </div>
+    
+      <div class="post">
+        <h2><%= post.name %></h2>
+        <p><%= post.body %></p>
+        <p><%= post.tags %></p>
+        <p><%= post.author %></p>
+        <p> <%= post.updatedAt.toLocaleDateString() %> </p>
+      </div>
+      
+  </body>
+</html>
